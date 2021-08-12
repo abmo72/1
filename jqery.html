@@ -2,12 +2,17 @@
 
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
-<meta >
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>jqery</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+</head>
+
 <body>
 
 
@@ -40,10 +45,13 @@
                 <table id="table" class="w3-container w3-card">
                     <thead>
                     <tr>
-                        <th nowrap> Name</th>
-                        <th nowrap> last name </th>
-                        <th nowrap> email </th>
-                        <th nowrap>Delete</th>
+                        <th> Name</th>
+                        <th > last name </th>
+                        <th > email </th>
+                        <th >Delete</th>
+                        <th>edite</th>
+
+
                     </tr>
                     </thead>
                     <tbody id="tbody"></tbody>
@@ -65,19 +73,51 @@
 
                 if($("#name").val() != null && $("#last_name").val() != ''){
 
-                    $("tbody").append("<tr class=w3-blue>" +"<td>" +$('#name').val()+ "</td>" +"<td>" + $('#last_name').val()+ "</td>" +"<td>" +$('#email').val()+ "</td>" + "<td>"  + "</td>" + "<td>" + "<button type='button' id='dell'>"+"Remove"+"</button>" + "</td>"
-                        +"</tr>");};
+                    $("tbody").append("<tr>" +"<td class='w3-container w3-card'>" +$('#name').val()+ "</td>"
+                        +"<td class='w3-container w3-card'>" + $('#last_name').val()+ "</td>"
+                        +"<td class='w3-container w3-card'>" +$('#email').val()+ "</td>"
+                        + "<td class='w3-container w3-card'>" + "<button type='button' id='dell'>"+"Remove"+"</button>"
+                        + "</td>" + "<td class='w3-container w3-card'>" +
+                        "<button type='button' id='edit'>"+"edit"+"</button>" + "</td>"+"</tr>");};
 
                 $(form).trigger("reset")
             })
         $(document).on('click','#dell',function(){
             $(this).parent().parent().remove();
         })
+        $("#table").on('click','#edit',function(){
+            $("form").append("<button type='button' id='update' class='w3-btn w3-blue'>"+"update"+"</button>");
+            var currentRow=$(this).closest("tr");
+            var col1=currentRow.find("td:eq(0)").text();
+            var col2=currentRow.find("td:eq(1)").text();
+            var col3=currentRow.find("td:eq(2)").text();
+            $("#name").val(col1);
+            $("#last_name").val(col2);
+            $("#email").val(col3);
+
+            $("#form").on('click','#update',function(){
+
+                var new_row= "<tr>" +"<td class='w3-container w3-card'>" +$('#name').val()+ "</td>"
+                    +"<td class='w3-container w3-card'>" + $('#last_name').val()+ "</td>"
+                    +"<td class='w3-container w3-card'>" +$('#email').val()+ "</td>"
+                    + "<td class='w3-container w3-card' >" + "<button type='button' id='dell'>"+"Remove"+"</button>"
+                    + "</td>" + "<td class='w3-container w3-card'>" +
+                    "<button type='button' id='edit'>"+"edit"+"</button>" + "</td>"+"</tr>"
+
+                $("#table").find($(currentRow)).replaceWith(new_row);
+
+                $("table tbody").find($(currentRow)).replaceWith(new_row);
+                if(currentRow){
+                    $("table tbody").find($(currentRow)).replaceWith(new_row);
+                    currentRow = null;
+                }
+                $("#update").remove();
+
+            });
+
+        });
+   
     })
 </script>
-
-
-
-
 </body>
 </html>
