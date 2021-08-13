@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="form.css">
+    <title>Title</title>
+</head>
+<body>
+<h1>برای دست یابی به جدول قیمت ها لطفا ثبت نام کنید</h1>
+<div>
+  <fieldset>
+
+    <legend> personal information</legend>
+    <form action="table%201.html" target="_blank" enctype="text/plain">
+      <br /> <br />
+      <p class="first-name"> name <br />
+        <input type="text" name="first name" size="30px" tabindex="10" placeholder="Ali..." required></p>
+
+      <p id="last-name"> last name <br />
+        <input  required type="text" name="first name" size="30px"  class="input" tabindex="20" placeholder="Rahmani...">
+      </p>
+      <p class="age"> age <br> <input type="text" name="age" size="30px" class="input" tabindex="50" placeholder="20..." required>
+      </p>
+      <p id="sex">sex <br />
+        <select id="sex1" name="sex1"><option value="male" id="male">male</option></p>
+      <option value="femal" id="female">female</option>
+
+        </select>
+
+      <p class="city">city </p>
+        <select id="city1" name="city"><option value="tehran" id="tehran">tehran</option>
+      <option value="esfahan" id="esfahan" selected >esfahan</option><option value="ahvaz" id="ahvaz">ahvaz</option>      <option value="shiraz" id="shraz">shiraz</option>
+        </select>
+      <br><br>
+<p class="color">favorite color </p>
+      <p class="color2">green <input type="radio" name="color" value="green" id="green"></p>  <p class="color2">red <input type="radio" name="color" value="red" id="red"></p>
+        <p class="color2">blue <input type="radio" name="color" value="blue" id="blue" checked></p>
+
+      <p class="email"> email <br> <input type="email" required name="email" size="30px"  class="input" tabindex="30"></p>
+
+      <p class="pass"> password <br> <input type="password" required name="password" size="30px"  class="input" tabindex="40"></p>
+
+
+
+
+      <p class="message" > message </p>
+      <textarea name="please type your message" id="message" cols="30" rows="10" tabindex="50" ></textarea>
+
+      <br />
+        <input type="submit" name="submit" value="submit" id="submit" tabindex="60" >
+
+    </form>
+
+</div>
+
+</fieldset>
+
+</body>
+</html>
