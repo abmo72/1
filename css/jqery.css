@@ -61,27 +61,27 @@ button:hover {
 
 
 
-    table{
-        font-size: 15px;
-        padding: 0;
-        margin: auto;
-        box-shadow: 0 2px 5px #f5f5f5;
-        background: white;
-        float: left;
-        margin-top: -563px;
-        margin-left: 50px;
-        font-size: small;
-    }
-    td{
-        text-align: center;
-        margin:3px;
-        background-color: antiquewhite;
-        box-shadow: 0 2px 5px #f5f5f5;
-        padding: 1px;
+table{
+    font-size: 15px;
+    padding: 0;
+    margin: auto;
+    box-shadow: 0 2px 5px #f5f5f5;
+    background: white;
+    float: left;
+    margin-top: -563px;
+    margin-left: 50px;
+    font-size: small;
+}
+td{
+    text-align: center;
+    margin:3px;
+    background-color: antiquewhite;
+    box-shadow: 0 2px 5px #f5f5f5;
+    padding: 1px;
 
-    }
+}
 #dell{
-      background-color: #FBEEE6;
+    background-color: #FBEEE6;
     font-size: 15px;
     text-align: center;
     border-radius: 5px;
@@ -93,6 +93,8 @@ button:hover {
     text-align: center;
     border-radius: 5px;
     color: #17202A;
-
+    visibility: visible;
 }
-
+#update{
+    display: none;
+}
